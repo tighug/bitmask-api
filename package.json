@@ -1,7 +1,7 @@
 {
   "name": "exhale-api",
   "version": "0.1.0",
-  "main": "dist/main.js",
+  "main": "dist/infrastructure/Server.js",
   "repository": "https://github.com/tighug/exhale-api.git",
   "author": "tighug <kapuriko123@gmail.com>",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "typeorm": "^0.2.28"
   },
   "scripts": {
-    "dev": "ts-node-dev src/main.ts",
+    "dev": "ts-node-dev src/infrastructure/Server.ts",
     "build": "tsc",
     "prestart": "yarn build",
     "start": "node ."

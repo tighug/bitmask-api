@@ -1,13 +1,18 @@
 import express from "express";
 import router from "./Router";
+import dotenv from "dotenv";
 
 const app = express();
+
+dotenv.config();
+
+const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", router);
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}...`);
 });

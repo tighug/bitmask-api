@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD /wait && yarn start
+CMD yarn start

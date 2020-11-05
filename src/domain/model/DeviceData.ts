@@ -6,7 +6,7 @@ import {
 } from "typeorm";
 
 @Entity()
-export class SensorData {
+export class DeviceData {
   @PrimaryGeneratedColumn()
   readonly id?: number;
 
@@ -28,7 +28,7 @@ export class SensorData {
   @CreateDateColumn()
   readonly createdAt?: Date;
 
-  constructor(props?: SensorData) {
+  constructor(props?: DeviceData) {
     // This is a hack for TypeORM.
     if (props) {
       this.id = props.id;

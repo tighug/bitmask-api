@@ -1,8 +1,7 @@
 import {
-  Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  OneToOne,
   PrimaryColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -14,8 +13,8 @@ export class Sensor {
   @PrimaryGeneratedColumn()
   readonly id?: number;
 
-  @ManyToOne(() => User)
-  readonly owner?: User;
+  @OneToOne(() => User)
+  readonly owner!: User;
 
   @PrimaryColumn()
   readonly name!: string;

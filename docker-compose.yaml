@@ -1,6 +1,14 @@
 version: "3.7"
 
 services:
+  proxy:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - "./conf.d:/etc/nginx/conf.d"
+
   user-api:
     container_name: user-api
     build:

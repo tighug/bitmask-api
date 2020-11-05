@@ -1,7 +1,6 @@
-import { Sensor } from "../model/Sensor";
-import { SensorData } from "../model/SensorData";
+import { DeviceData } from "../model/DeviceData";
 
 export interface ISensorDataRepository {
-  save(sensorData: SensorData): Promise<SensorData>;
-  find(sensor?: Sensor, from?: Date, to?: Date): Promise<SensorData[]>;
+  save(sensorData: DeviceData): Promise<DeviceData>;
+  find(deviceName?: string, from?: Date, to?: Date): Promise<DeviceData[]>;
 }

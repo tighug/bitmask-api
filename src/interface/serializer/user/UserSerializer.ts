@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 import { User } from "../../../domain/model/User";
 import { InternalServerError } from "../../../util/HttpException";
 import { UserRO } from "./UserRO";
@@ -28,6 +29,11 @@ export class UserSerializer {
     if (updatedAt === undefined)
       throw new InternalServerError("The updatedAt must not be undefined.");
 
-    return { id, createdAt, updatedAt, ...props };
+    return {
+      id,
+      createdAt: DateTime.fromJSDate(createdAt).toFormat("yyyy-LL-dd-HH-mm-ss"),
+      updatedAt: DateTime.fromJSDate(updatedAt).toFormat("yyyy-LL-dd-HH-mm-ss"),
+      ...props,
+    };
   }
 }

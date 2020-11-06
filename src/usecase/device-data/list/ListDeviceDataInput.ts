@@ -9,7 +9,7 @@ export class ListDeviceDataInput {
 
   constructor(props: ListDeviceDataInput) {
     this.deviceName = props.deviceName;
-    this.from = props.from;
-    this.to = props.to;
+    this.from = props.from || new Date(2020, 1, 1, 0, 0, 0);
+    this.to = props.to || new Date(3020, 1, 1, 0, 0, 0);
   }
 }

@@ -31,8 +31,12 @@ export class UserSerializer {
 
     return {
       id,
-      createdAt: DateTime.fromJSDate(createdAt).toFormat("yyyy-LL-dd-HH-mm-ss"),
-      updatedAt: DateTime.fromJSDate(updatedAt).toFormat("yyyy-LL-dd-HH-mm-ss"),
+      createdAt: DateTime.fromJSDate(createdAt)
+        .setLocale("ja")
+        .toFormat("yyyy-LL-dd-HH-mm-ss"),
+      updatedAt: DateTime.fromJSDate(updatedAt)
+        .setLocale("ja")
+        .toFormat("yyyy-LL-dd-HH-mm-ss"),
       ...props,
     };
   }

@@ -1,8 +1,17 @@
 version: "3.7"
 
 services:
-  user-api:
-    container_name: user-api
+  proxy:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - "./conf.d:/etc/nginx/conf.d"
+    restart: always
+
+  api:
+    container_name: api
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,12 +21,13 @@ services:
       - ${PORT}:${PORT}
     command: yarn start
     depends_on:
-      - user-db
+      - db
     links:
-      - user-db
+      - db
+    restart: always
 
-  user-db:
-    container_name: user-db
+  db:
+    container_name: db
     image: mysql:5.7
     env_file:
       - ./.env

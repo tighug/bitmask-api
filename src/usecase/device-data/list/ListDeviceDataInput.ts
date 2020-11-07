@@ -1,9 +1,5 @@
-import { MinLength } from "class-validator";
-
 export class ListDeviceDataInput {
-  @MinLength(3)
   readonly deviceName?: string;
-
   readonly from?: Date;
   readonly to?: Date;
 

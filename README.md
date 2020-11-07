@@ -1,6 +1,6 @@
-# Exhale API
+# Bitmask API
 
-ヘルスケアマスクサービスのための API サーバー
+ヘルスケアマスクサービス Bitmask のための API サーバー
 
 ## Setup
 
@@ -152,7 +152,7 @@ Response
 
 Queries
 
-- `deviceName` : センサーデバイスの名前
+- `deviceName` : センサーデバイスの名前。省略可。（string）
 - `from` : データ取得日時の範囲の始まり。省略可。（Date)
   - e.g. `2020-11-03-13-30-00`
 - `to` : データ取得日時の範囲の終わり。省略可。（Date)
@@ -170,18 +170,18 @@ Response
       "createdAt": "2020-11-06-13-12-27",
       "deviceName": "device-A",
       "temperature": 36,
-      "humidity": 50,
+      "humidity": 50.2,
       "pressure": 1020,
-      "gas": 12
+      "gas": 12.3
     },
     {
       "id": 2,
       "createdAt": "2020-11-06-13-12-29",
       "deviceName": "device-A",
       "temperature": 36,
-      "humidity": 50,
+      "humidity": 50.2,
       "pressure": 1020,
-      "gas": 12
+      "gas": 12.3
     }
   ]
 }
@@ -196,10 +196,10 @@ Body
 ```json
 {
   "deviceName": "device-A",
-  "temperature": "36.0",
-  "humidity": "50.2",
-  "pressure": "1020",
-  "gas": "12.3"
+  "temperature": 36.0,
+  "humidity": 50.2,
+  "pressure": 1020,
+  "gas": 12.3
 }
 ```
 
@@ -212,9 +212,9 @@ Response
     "createdAt": "2020-11-06-13-12-27",
     "deviceName": "device-A",
     "temperature": 36,
-    "humidity": 50,
+    "humidity": 50.2,
     "pressure": 1020,
-    "gas": 12
+    "gas": 12.3
   }
 }
 ```
@@ -222,7 +222,3 @@ Response
 ## License
 
 [MIT](./LICENSE)
-
-```
-
-```

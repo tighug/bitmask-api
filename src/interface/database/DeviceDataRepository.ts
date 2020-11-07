@@ -18,9 +18,10 @@ export class DeviceDataRepository implements IDeviceDataRepository {
     from?: Date,
     to?: Date
   ): Promise<DeviceData[]> {
-    return await this.repository.find({
-      deviceName,
-      createdAt: Between(from, to),
-    });
+    const options =
+      deviceName !== undefined
+        ? { deviceName, createdAt: Between(from, to) }
+        : { createdAt: Between(from, to) };
+    return await this.repository.find(options);
   }
 }

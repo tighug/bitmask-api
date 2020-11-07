@@ -13,16 +13,16 @@ export class DeviceData {
   @Column()
   readonly deviceName!: string;
 
-  @Column()
+  @Column("float")
   readonly temperature!: number;
 
-  @Column()
+  @Column("float")
   readonly humidity!: number;
 
-  @Column()
+  @Column("float")
   readonly pressure!: number;
 
-  @Column()
+  @Column("float")
   readonly gas!: number;
 
   @CreateDateColumn()

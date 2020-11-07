@@ -152,7 +152,7 @@ Response
 
 Queries
 
-- `deviceName` : センサーデバイスの名前
+- `deviceName` : センサーデバイスの名前。省略可。（string）
 - `from` : データ取得日時の範囲の始まり。省略可。（Date)
   - e.g. `2020-11-03-13-30-00`
 - `to` : データ取得日時の範囲の終わり。省略可。（Date)

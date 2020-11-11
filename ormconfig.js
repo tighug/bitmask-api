@@ -5,7 +5,7 @@ module.exports = {
   username: process.env.DB_USERNAME || "test",
   password: process.env.DB_PASSWORD || "test",
   database: process.env.DB_NAME || "test",
-  synchronize: true, // FIXME: Danger
+  synchronize: process.env.NODE_ENV === "development",
   logging: process.env.NODE_ENV === "development",
   entities: [
     process.env.NODE_ENV === "production"

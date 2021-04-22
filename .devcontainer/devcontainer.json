@@ -1,0 +1,22 @@
+{
+	"name": "bitmask-api",
+	"build": {
+		"dockerfile": "../Dockerfile",
+    "target": "development"
+	},
+
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.vscode-typescript-tslint-plugin"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// "postCreateCommand": "yarn install",
+	"remoteUser": "node"
+}
